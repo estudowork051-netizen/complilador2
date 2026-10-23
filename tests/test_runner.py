@@ -5,7 +5,13 @@ import json
 import math
 import sys
 
-PROJECT_ROOT = "/guardians_of_the_last_base"
+# Detecta a raiz do projeto dinamicamente (compatível com GitHub Actions, Docker ou local)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+if not os.path.exists(os.path.join(PROJECT_ROOT, "project.godot")):
+    if os.path.exists("/guardians_of_the_last_base"):
+        PROJECT_ROOT = "/guardians_of_the_last_base"
+print(f"Raiz do Projeto detectada: {PROJECT_ROOT}")
 
 class TestReport:
     def __init__(self):
