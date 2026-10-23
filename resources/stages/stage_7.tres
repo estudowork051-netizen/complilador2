@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg7res00"]
+
+[resource]
+metadata/stage_id = 7
+metadata/title = "Minas Esquecidas"
+metadata/waves_count = 8
+metadata/reward_coins = 530
+metadata/reward_exp = 220
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

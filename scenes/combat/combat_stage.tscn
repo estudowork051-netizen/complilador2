@@ -1,0 +1,453 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8ycombat001"]
+
+[ext_resource type="Script" path="res://scripts/combat/combat_manager.gd" id="1_combat_mgr"]
+[ext_resource type="Script" path="res://scripts/ui/combat_ui.gd" id="2_combat_ui"]
+[ext_resource type="Texture2D" path="res://assets/sprites/base_fortress.svg" id="3_base_fort"]
+[ext_resource type="Texture2D" path="res://assets/icons/coin.svg" id="4_coin_icon"]
+
+[sub_resource type="Curve2D" id="Curve2D_path"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 360, 130, -40, -20, 40, 20, 200, 260, 40, -20, -40, 20, 520, 390, -40, -20, 40, 20, 200, 530, 40, -20, -40, 20, 520, 680, 0, -30, 0, 30, 360, 840, 0, 0, 0, 0, 360, 930)
+}
+
+[node name="CombatStage" type="Node2D"]
+script = ExtResource("1_combat_mgr")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0.0666667, 0.0823529, 0.129412, 1)
+
+[node name="BattlefieldFloor" type="ColorRect" parent="."]
+offset_left = 12.0
+offset_top = 105.0
+offset_right = 708.0
+offset_bottom = 1000.0
+color = Color(0.109804, 0.141176, 0.196078, 1)
+
+[node name="RoadVisual" type="Line2D" parent="."]
+points = PackedVector2Array(360, 130, 200, 260, 520, 390, 200, 530, 520, 680, 360, 840, 360, 930)
+width = 46.0
+default_color = Color(0.231373, 0.282353, 0.380392, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="RoadBorder" type="Line2D" parent="."]
+points = PackedVector2Array(360, 130, 200, 260, 520, 390, 200, 530, 520, 680, 360, 840, 360, 930)
+width = 50.0
+default_color = Color(0.337255, 0.415686, 0.541176, 0.5)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="SpawnPortal" type="Node2D" parent="."]
+position = Vector2(360, 130)
+
+[node name="PortalOuter" type="ColorRect" parent="SpawnPortal"]
+offset_left = -28.0
+offset_top = -18.0
+offset_right = 28.0
+offset_bottom = 18.0
+color = Color(0.6, 0.1, 0.7, 0.8)
+
+[node name="PortalInner" type="ColorRect" parent="SpawnPortal"]
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 12.0
+color = Color(0.9, 0.4, 1.0, 1)
+
+[node name="BaseFortress" type="Node2D" parent="."]
+position = Vector2(360, 930)
+
+[node name="Sprite2D" type="Sprite2D" parent="BaseFortress"]
+position = Vector2(0, -10)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_base_fort")
+
+[node name="DefenseSlotMarkers" type="Node2D" parent="."]
+
+[node name="Slot0" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 340.0
+offset_top = 240.0
+offset_right = 380.0
+offset_bottom = 280.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="Slot1" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 340.0
+offset_top = 410.0
+offset_right = 380.0
+offset_bottom = 450.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="Slot2" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 340.0
+offset_top = 580.0
+offset_right = 380.0
+offset_bottom = 620.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="Slot3" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 140.0
+offset_top = 430.0
+offset_right = 180.0
+offset_bottom = 470.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="Slot4" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 540.0
+offset_top = 590.0
+offset_right = 580.0
+offset_bottom = 630.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="Slot5" type="ColorRect" parent="DefenseSlotMarkers"]
+offset_left = 340.0
+offset_top = 750.0
+offset_right = 380.0
+offset_bottom = 790.0
+color = Color(0.18, 0.35, 0.55, 0.4)
+
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_path")
+
+[node name="DefendersContainer" type="Node2D" parent="."]
+
+[node name="EffectsContainer" type="Node2D" parent="."]
+
+[node name="ProjectilesContainer" type="Node2D" parent="."]
+
+[node name="CombatUI" type="CanvasLayer" parent="."]
+script = ExtResource("2_combat_ui")
+
+[node name="TopBar" type="Panel" parent="CombatUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="CombatUI/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 6.0
+offset_right = -14.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="HBoxRow1" type="HBoxContainer" parent="CombatUI/TopBar/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BaseHPContainer" type="HBoxContainer" parent="CombatUI/TopBar/VBox/HBoxRow1"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="IconLabel" type="Label" parent="CombatUI/TopBar/VBox/HBoxRow1/BaseHPContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Fortaleza:"
+
+[node name="HPBar" type="ProgressBar" parent="CombatUI/TopBar/VBox/HBoxRow1/BaseHPContainer"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="CombatUI/TopBar/VBox/HBoxRow1/BaseHPContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "100/100"
+
+[node name="CoinsContainer" type="HBoxContainer" parent="CombatUI/TopBar/VBox/HBoxRow1"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 4
+
+[node name="CoinIcon" type="TextureRect" parent="CombatUI/TopBar/VBox/HBoxRow1/CoinsContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_coin_icon")
+expand_mode = 1
+
+[node name="CoinsLabel" type="Label" parent="CombatUI/TopBar/VBox/HBoxRow1/CoinsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "350"
+
+[node name="ControlsContainer" type="HBoxContainer" parent="CombatUI/TopBar/VBox/HBoxRow1"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SpeedButton" type="Button" parent="CombatUI/TopBar/VBox/HBoxRow1/ControlsContainer"]
+custom_minimum_size = Vector2(48, 36)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 13
+text = "1x"
+
+[node name="PauseButton" type="Button" parent="CombatUI/TopBar/VBox/HBoxRow1/ControlsContainer"]
+custom_minimum_size = Vector2(62, 36)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 13
+text = "Pausar"
+
+[node name="HBoxRow2" type="HBoxContainer" parent="CombatUI/TopBar/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="WaveContainer" type="HBoxContainer" parent="CombatUI/TopBar/VBox/HBoxRow2"]
+layout_mode = 2
+
+[node name="WaveLabel" type="Label" parent="CombatUI/TopBar/VBox/HBoxRow2/WaveContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "Onda 1 / 5"
+
+[node name="EnemiesContainer" type="HBoxContainer" parent="CombatUI/TopBar/VBox/HBoxRow2"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="EnemiesLabel" type="Label" parent="CombatUI/TopBar/VBox/HBoxRow2/EnemiesContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.85, 0.9, 1)
+theme_override_font_sizes/font_size = 13
+text = "Inimigos: 0"
+
+[node name="BottomBar" type="Panel" parent="CombatUI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SkillsContainer" type="HBoxContainer" parent="CombatUI/BottomBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -55.0
+offset_right = 340.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Modals" type="Control" parent="CombatUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PauseModal" type="ColorRect" parent="CombatUI/Modals"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="Panel" type="Panel" parent="CombatUI/Modals/PauseModal"]
+custom_minimum_size = Vector2(340, 260)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -130.0
+offset_right = 170.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CombatUI/Modals/PauseModal/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="CombatUI/Modals/PauseModal/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Batalha Pausada"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CombatUI/Modals/PauseModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continuar Batalha"
+
+[node name="RestartButton" type="Button" parent="CombatUI/Modals/PauseModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reiniciar Fase"
+
+[node name="QuitButton" type="Button" parent="CombatUI/Modals/PauseModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar ao Menu"
+
+[node name="VictoryModal" type="ColorRect" parent="CombatUI/Modals"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Panel" type="Panel" parent="CombatUI/Modals/VictoryModal"]
+custom_minimum_size = Vector2(340, 340)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 170.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CombatUI/Modals/VictoryModal/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "VITÓRIA!"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "A base foi protegida com sucesso!"
+horizontal_alignment = 1
+
+[node name="Rewards" type="Label" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 15
+text = "+140 Ouro  |  +5 Gemas  |  +50 EXP"
+horizontal_alignment = 1
+
+[node name="NextStageButton" type="Button" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Próxima Fase"
+
+[node name="ReplayButton" type="Button" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Repetir Fase"
+
+[node name="ContinueButton" type="Button" parent="CombatUI/Modals/VictoryModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar ao Menu"
+
+[node name="DefeatModal" type="ColorRect" parent="CombatUI/Modals"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1, 0, 0, 0.85)
+
+[node name="Panel" type="Panel" parent="CombatUI/Modals/DefeatModal"]
+custom_minimum_size = Vector2(340, 280)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -140.0
+offset_right = 170.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CombatUI/Modals/DefeatModal/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="CombatUI/Modals/DefeatModal/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 30
+text = "DERROTA"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="CombatUI/Modals/DefeatModal/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "A Fortaleza sucumbiu aos invasores."
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="CombatUI/Modals/DefeatModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tentar Novamente"
+
+[node name="QuitButton" type="Button" parent="CombatUI/Modals/DefeatModal/Panel/VBox"]
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar ao Menu Principal"

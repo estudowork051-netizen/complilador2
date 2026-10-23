@@ -1,0 +1,22 @@
+<svg width="140" height="180" viewBox="0 0 140 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- Main Keep -->
+  <rect x="30" y="50" width="80" height="120" fill="url(#wallGrad)" stroke="#64748b" stroke-width="4"/>
+  <!-- Battlements -->
+  <rect x="25" y="35" width="20" height="25" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="60" y="35" width="20" height="25" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="95" y="35" width="20" height="25" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Central Crystal Core -->
+  <polygon points="70,10 82,32 70,50 58,32" fill="#38bdf8" stroke="#ffffff" stroke-width="3"/>
+  <!-- Gate -->
+  <path d="M50 170 L50 120 C50 105 90 105 90 120 L90 170 Z" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+  <!-- Banners -->
+  <polygon points="40,75 52,75 46,110" fill="#2563eb"/>
+  <polygon points="88,75 100,75 94,110" fill="#2563eb"/>
+</svg>

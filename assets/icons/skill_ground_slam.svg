@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#451a03" stroke="#f59e0b" stroke-width="3"/>
+  <!-- Cracking Earth -->
+  <path d="M32 12 L32 38 M22 48 L32 38 L42 48 M12 56 L22 48 M52 56 L42 48" stroke="#fef08a" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="32,8 24,20 40,20" fill="#f59e0b"/>
+</svg>

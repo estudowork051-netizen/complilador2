@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://lyrares00"]
+
+[resource]
+metadata/character_id = "lyra"
+metadata/name = "Lyra"
+metadata/title = "Arqueira das Sombras"
+metadata/role = "Ataque Rápido & Alvos Prioritários"
+metadata/base_damage = 18.0
+metadata/base_attack_speed = 1.55
+metadata/base_range = 270.0
+metadata/base_skill_damage = 50.0
+metadata/avatar_path = "res://assets/icons/lyra_avatar.svg"
+metadata/sprite_path = "res://assets/sprites/lyra_sprite.svg"

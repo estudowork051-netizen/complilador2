@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg4res00"]
+
+[resource]
+metadata/stage_id = 4
+metadata/title = "Pântano das Brumas"
+metadata/waves_count = 6
+metadata/reward_coins = 290
+metadata/reward_exp = 115
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

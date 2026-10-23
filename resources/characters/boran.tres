@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://boranres00"]
+
+[resource]
+metadata/character_id = "boran"
+metadata/name = "Boran"
+metadata/title = "Engenheiro de Armadilhas"
+metadata/role = "Armadilhas & Engenharia Tática"
+metadata/base_damage = 22.0
+metadata/base_attack_speed = 1.35
+metadata/base_range = 210.0
+metadata/base_skill_damage = 85.0
+metadata/avatar_path = "res://assets/icons/boran_avatar.svg"
+metadata/sprite_path = "res://assets/sprites/boran_sprite.svg"

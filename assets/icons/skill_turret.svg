@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0c4a6e" stroke="#0284c7" stroke-width="3"/>
+  <!-- Turret Base and Barrel -->
+  <polygon points="18,52 46,52 38,38 26,38" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+  <circle cx="32" cy="34" r="10" fill="#0284c7" stroke="#e0f2fe" stroke-width="2"/>
+  <line x1="32" y1="34" x2="54" y2="22" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/>
+</svg>

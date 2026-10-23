@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 850" width="720" height="850">
+  <defs>
+    <linearGradient id="skyGrad_scena" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C1017"/>
+      <stop offset="100%" stop-color="#171F2C"/>
+    </linearGradient>
+    <radialGradient id="glow_scena" cx="50%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#768DAE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0C1017" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="720" height="850" fill="url(#skyGrad_scena)"/>
+  <rect x="0" y="0" width="720" height="850" fill="url(#glow_scena)"/>
+  <!-- Decorative Environment Features -->
+  <circle cx="80" cy="180" r="45" fill="#485E80" opacity="0.25"/>
+  <circle cx="640" cy="240" r="55" fill="#485E80" opacity="0.2"/>
+  <circle cx="100" cy="520" r="60" fill="#485E80" opacity="0.25"/>
+  <circle cx="630" cy="620" r="50" fill="#485E80" opacity="0.2"/>
+  <!-- Ambient Runes / Particles -->
+  <polygon points="120,300 130,315 110,315" fill="#768DAE" opacity="0.4"/>
+  <polygon points="600,420 610,435 590,435" fill="#768DAE" opacity="0.4"/>
+  <polygon points="160,700 170,715 150,715" fill="#768DAE" opacity="0.4"/>
+</svg>

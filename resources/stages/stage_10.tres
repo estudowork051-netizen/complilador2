@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg10res00"]
+
+[resource]
+metadata/stage_id = 10
+metadata/title = "Covil do Ogro Ancestral"
+metadata/waves_count = 10
+metadata/reward_coins = 1100
+metadata/reward_exp = 500
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg2res00"]
+
+[resource]
+metadata/stage_id = 2
+metadata/title = "Trilha dos Espinheiros"
+metadata/waves_count = 5
+metadata/reward_coins = 180
+metadata/reward_exp = 70
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

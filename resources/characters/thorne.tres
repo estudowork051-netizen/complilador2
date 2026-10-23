@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://thorneres00"]
+
+[resource]
+metadata/character_id = "thorne"
+metadata/name = "Thorne"
+metadata/title = "Guerreiro Protetor"
+metadata/role = "Dano Contundente & Atordoamento"
+metadata/base_damage = 38.0
+metadata/base_attack_speed = 0.85
+metadata/base_range = 190.0
+metadata/base_skill_damage = 90.0
+metadata/avatar_path = "res://assets/icons/thorne_avatar.svg"
+metadata/sprite_path = "res://assets/sprites/thorne_sprite.svg"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://kaelres00"]
+
+[resource]
+metadata/character_id = "kael"
+metadata/name = "Kael"
+metadata/title = "Guardião Arcano"
+metadata/role = "Dano Mágico & Controle"
+metadata/base_damage = 28.0
+metadata/base_attack_speed = 1.0
+metadata/base_range = 230.0
+metadata/base_skill_damage = 75.0
+metadata/avatar_path = "res://assets/icons/kael_avatar.svg"
+metadata/sprite_path = "res://assets/sprites/kael_sprite.svg"

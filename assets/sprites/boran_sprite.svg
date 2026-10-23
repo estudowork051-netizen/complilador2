@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" width="100" height="120">
+  <ellipse cx="50" cy="112" rx="28" ry="7" fill="#000000" opacity="0.45"/>
+  <!-- Leather Vest & Copper Gear -->
+  <rect x="34" y="44" width="32" height="42" rx="5" fill="#B33939" stroke="#E67E22" stroke-width="2"/>
+  <circle cx="50" cy="62" r="10" fill="#E67E22" stroke="#F39C12" stroke-width="1.5"/>
+  <circle cx="50" cy="62" r="4" fill="#333333"/>
+  <rect x="36" y="86" width="10" height="24" fill="#2C3E50"/>
+  <rect x="54" y="86" width="10" height="24" fill="#2C3E50"/>
+  <!-- Head & Steampunk Goggles -->
+  <circle cx="50" cy="26" r="15" fill="#F7D794"/>
+  <rect x="38" y="14" width="24" height="12" rx="3" fill="#795548"/>
+  <circle cx="44" cy="24" r="6" fill="#1ABC9C" stroke="#D35400" stroke-width="2"/>
+  <circle cx="56" cy="24" r="6" fill="#1ABC9C" stroke="#D35400" stroke-width="2"/>
+  <!-- Mechanical Gauntlet / Wrench -->
+  <rect x="72" y="38" width="12" height="30" rx="3" fill="#BDC3C7" stroke="#7F8C8D" stroke-width="1.5"/>
+  <circle cx="78" cy="72" r="8" fill="#F39C12"/>
+</svg>

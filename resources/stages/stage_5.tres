@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg5res00"]
+
+[resource]
+metadata/stage_id = 5
+metadata/title = "Ruínas da Fortaleza Antiga"
+metadata/waves_count = 7
+metadata/reward_coins = 360
+metadata/reward_exp = 145
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

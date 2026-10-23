@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg9res00"]
+
+[resource]
+metadata/stage_id = 9
+metadata/title = "Portão da Cidadela Caída"
+metadata/waves_count = 9
+metadata/reward_coins = 770
+metadata/reward_exp = 330
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

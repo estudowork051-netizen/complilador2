@@ -1,0 +1,13 @@
+<svg width="72" height="64" viewBox="0 0 72 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bat Wings -->
+  <path d="M36 28 Q18 6 6 22 Q16 36 36 36" fill="#4c1d95" stroke="#a78bfa" stroke-width="2"/>
+  <path d="M36 28 Q54 6 66 22 Q56 36 36 36" fill="#4c1d95" stroke="#a78bfa" stroke-width="2"/>
+  <!-- Body -->
+  <ellipse cx="36" cy="34" rx="10" ry="12" fill="#2e1065"/>
+  <circle cx="36" cy="22" r="8" fill="#581c87" stroke="#c084fc" stroke-width="1.5"/>
+  <!-- Glowing Violet Eyes -->
+  <circle cx="33" cy="21" r="2" fill="#38bdf8"/>
+  <circle cx="39" cy="21" r="2" fill="#38bdf8"/>
+  <!-- Ground Shadow projection -->
+  <ellipse cx="36" cy="58" rx="14" ry="4" fill="#000000" opacity="0.4"/>
+</svg>

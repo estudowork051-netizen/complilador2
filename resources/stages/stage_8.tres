@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg8res00"]
+
+[resource]
+metadata/stage_id = 8
+metadata/title = "Bosque das Sombras"
+metadata/waves_count = 8
+metadata/reward_coins = 640
+metadata/reward_exp = 270
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

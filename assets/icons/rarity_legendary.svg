@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 36" width="120" height="36">
+  <defs>
+    <linearGradient id="bgGrad_legendary" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D35400"/>
+      <stop offset="100%" stop-color="#F1C40F"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="116" height="32" rx="6" fill="#111827" stroke="url(#bgGrad_legendary)" stroke-width="2"/>
+  <rect x="6" y="6" width="108" height="24" rx="4" fill="url(#bgGrad_legendary)" opacity="0.25"/>
+  <text x="60" y="23" font-family="sans-serif" font-size="13" font-weight="bold" fill="#F1C40F" text-anchor="middle" letter-spacing="1.5">LENDÁRIO</text>
+</svg>

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg3res00"]
+
+[resource]
+metadata/stage_id = 3
+metadata/title = "Passo Rochoso"
+metadata/waves_count = 6
+metadata/reward_coins = 230
+metadata/reward_exp = 90
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

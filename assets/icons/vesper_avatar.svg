@@ -1,0 +1,9 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="64" cy="64" r="60" fill="#09090b" stroke="#a1a1aa" stroke-width="4"/>
+  <path d="M34 98 C34 48 48 24 64 24 C80 24 94 48 94 98 Z" fill="#18181b"/>
+  <ellipse cx="64" cy="62" rx="20" ry="24" fill="#050505"/>
+  <!-- Crosshair Eye -->
+  <circle cx="58" cy="58" r="8" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <line x1="58" y1="48" x2="58" y2="68" stroke="#ef4444" stroke-width="1.5"/>
+  <line x1="48" y1="58" x2="68" y2="58" stroke="#ef4444" stroke-width="1.5"/>
+</svg>

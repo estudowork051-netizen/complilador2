@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 120" width="110" height="120">
+  <ellipse cx="55" cy="112" rx="34" ry="8" fill="#000000" opacity="0.5"/>
+  <!-- Heavy Armor Body -->
+  <rect x="36" y="44" width="38" height="46" rx="6" fill="#636E72" stroke="#B2BEC3" stroke-width="2"/>
+  <rect x="42" y="50" width="26" height="32" rx="3" fill="#2D3436"/>
+  <rect x="38" y="90" width="14" height="22" rx="2" fill="#636E72"/>
+  <rect x="58" y="90" width="14" height="22" rx="2" fill="#636E72"/>
+  <!-- Massive Pauldrons -->
+  <circle cx="28" cy="46" r="14" fill="#B2BEC3" stroke="#DFE6E9" stroke-width="2"/>
+  <circle cx="82" cy="46" r="14" fill="#B2BEC3" stroke="#DFE6E9" stroke-width="2"/>
+  <!-- Great Helm -->
+  <rect x="42" y="16" width="26" height="26" rx="6" fill="#B2BEC3" stroke="#DFE6E9" stroke-width="2"/>
+  <line x1="46" y1="26" x2="64" y2="26" stroke="#2D3436" stroke-width="3"/>
+  <polygon points="55,10 60,16 50,16" fill="#D63031"/>
+  <!-- Tower Shield -->
+  <polygon points="12,35 34,35 30,95 23,105 16,95" fill="#0984E3" stroke="#F1C40F" stroke-width="2.5"/>
+  <polygon points="23,45 28,55 23,65 18,55" fill="#F1C40F"/>
+  <!-- War Hammer -->
+  <rect x="85" y="25" width="6" height="80" rx="2" fill="#7F8C8D"/>
+  <rect x="76" y="20" width="24" height="16" rx="3" fill="#BDC3C7" stroke="#F1C40F" stroke-width="1.5"/>
+</svg>

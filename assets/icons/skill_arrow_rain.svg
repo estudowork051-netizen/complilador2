@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#133626" stroke="#38a169" stroke-width="3"/>
+  <!-- 3 falling arrows -->
+  <g stroke="#68d391" stroke-width="3" stroke-linecap="round">
+    <line x1="20" y1="14" x2="26" y2="46"/>
+    <polyline points="21,41 26,46 29,40" fill="none"/>
+    <line x1="32" y1="10" x2="35" y2="52"/>
+    <polyline points="30,47 35,52 38,46" fill="none"/>
+    <line x1="44" y1="16" x2="42" y2="44"/>
+    <polyline points="38,39 42,44 46,39" fill="none"/>
+  </g>
+</svg>

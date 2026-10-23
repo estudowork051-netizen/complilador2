@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://elysiares00"]
+
+[resource]
+metadata/character_id = "elysia"
+metadata/name = "Elysia"
+metadata/title = "Maga Elemental"
+metadata/role = "Dano Contínuo & Incêndio"
+metadata/base_damage = 24.0
+metadata/base_attack_speed = 1.15
+metadata/base_range = 240.0
+metadata/base_skill_damage = 80.0
+metadata/avatar_path = "res://assets/icons/elysia_avatar.svg"
+metadata/sprite_path = "res://assets/sprites/elysia_sprite.svg"

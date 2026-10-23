@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0d2847" stroke="#3182ce" stroke-width="3"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#63b3ed" stroke-width="3" stroke-dasharray="6,4"/>
+  <circle cx="32" cy="32" r="12" fill="none" stroke="#90cdf4" stroke-width="2"/>
+  <!-- Hourglass symbol in center -->
+  <polygon points="24,20 40,20 24,44 40,44" fill="none" stroke="#e2e8f0" stroke-width="2.5"/>
+</svg>

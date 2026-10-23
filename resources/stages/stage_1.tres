@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://stg1res00"]
+
+[resource]
+metadata/stage_id = 1
+metadata/title = "Encruzilhada da Coragem"
+metadata/waves_count = 5
+metadata/reward_coins = 140
+metadata/reward_exp = 50
+metadata/scene_path = "res://scenes/combat/combat_stage.tscn"

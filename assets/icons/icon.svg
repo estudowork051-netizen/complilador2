@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a29"/>
+      <stop offset="50%" stop-color="#0f1420"/>
+      <stop offset="100%" stop-color="#080a10"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d365"/>
+      <stop offset="100%" stop-color="#fda085"/>
+    </linearGradient>
+    <linearGradient id="magicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)" stroke="#f6d365" stroke-width="8"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#4facfe" stroke-width="4" stroke-dasharray="12,8" opacity="0.6"/>
+  <!-- Fortress Shape -->
+  <path d="M156 380 L156 220 L196 220 L196 250 L236 250 L236 180 L276 180 L276 250 L316 250 L316 220 L356 220 L356 380 Z" fill="#2d3748" stroke="#f6d365" stroke-width="8"/>
+  <!-- Magic Gem / Crystal -->
+  <polygon points="256,100 290,160 256,220 222,160" fill="url(#magicGrad)" stroke="#ffffff" stroke-width="4"/>
+  <!-- Gate -->
+  <path d="M226 380 L226 300 C226 280 286 280 286 300 L286 380 Z" fill="#0f1420" stroke="#f6d365" stroke-width="4"/>
+  <!-- Stars/Runes -->
+  <circle cx="256" cy="160" r="8" fill="#ffffff"/>
+  <circle cx="160" cy="140" r="4" fill="#00f2fe"/>
+  <circle cx="352" cy="140" r="4" fill="#00f2fe"/>
+</svg>
