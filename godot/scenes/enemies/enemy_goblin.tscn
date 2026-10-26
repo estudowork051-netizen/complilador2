@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/enemy_goblin.glb" id="2_model"]
+
+[node name="EnemyGoblin" type="PathFollow3D"]
+script = ExtResource("1_script")
+enemy_type = "goblin"
+display_name = "Goblin Saqueador"
+max_health = 100
+move_speed = 2.2
+attack_damage = 12
+bounty_coins = 10
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

@@ -1,0 +1,160 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/living_environment.gd" id="1_living"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Ground"]
+albedo_color = Color(0.059, 0.090, 0.165, 1.0)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Mesh_Ground"]
+material = SubResource("Mat_Ground")
+size = Vector3(14, 1.4, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Border"]
+albedo_color = Color(0.118, 0.161, 0.231, 1.0)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Mesh_Border"]
+material = SubResource("Mat_Border")
+size = Vector3(0.6, 0.5, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road"]
+albedo_color = Color(0.200, 0.255, 0.333, 1.0)
+roughness = 0.75
+
+[sub_resource type="BoxMesh" id="Mesh_Road"]
+material = SubResource("Mat_Road")
+size = Vector3(1.8, 0.08, 20)
+
+[sub_resource type="StandardMaterial3D" id="Mat_CrystalPool"]
+transparency = 1
+albedo_color = Color(0.008, 0.518, 0.780, 0.9)
+emission_enabled = true
+emission = Color(0.220, 0.741, 0.973, 1.0)
+emission_energy_multiplier = 0.8
+roughness = 0.1
+
+[sub_resource type="BoxMesh" id="Mesh_Pool"]
+material = SubResource("Mat_CrystalPool")
+size = Vector3(14, 0.06, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Bridge"]
+albedo_color = Color(0.118, 0.161, 0.231, 1.0)
+metallic = 0.3
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="Mesh_Bridge"]
+material = SubResource("Mat_Bridge")
+size = Vector3(2.4, 0.25, 2.8)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Crystal"]
+transparency = 1
+albedo_color = Color(0.008, 0.518, 0.780, 0.9)
+emission_enabled = true
+emission = Color(0.220, 0.741, 0.973, 1.0)
+emission_energy_multiplier = 2.0
+metallic = 0.4
+roughness = 0.1
+
+[sub_resource type="CylinderMesh" id="Mesh_CrystalCluster"]
+material = SubResource("Mat_Crystal")
+top_radius = 0.05
+bottom_radius = 0.45
+height = 2.2
+
+[sub_resource type="StandardMaterial3D" id="Mat_Lantern"]
+albedo_color = Color(0.220, 0.741, 0.973, 1.0)
+emission_enabled = true
+emission = Color(0.220, 0.741, 0.973, 1.0)
+emission_energy_multiplier = 3.5
+
+[sub_resource type="SphereMesh" id="Mesh_Lantern"]
+material = SubResource("Mat_Lantern")
+radius = 0.18
+height = 0.36
+
+[sub_resource type="StandardMaterial3D" id="Mat_Dust"]
+transparency = 1
+albedo_color = Color(0.220, 0.741, 0.973, 0.9)
+emission_enabled = true
+emission = Color(0.220, 0.741, 0.973, 1.0)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="SphereMesh" id="Mesh_Dust"]
+material = SubResource("Mat_Dust")
+radius = 0.05
+height = 0.10
+
+[node name="CrystalCaverns" type="Node3D"]
+script = ExtResource("1_living")
+
+[node name="GroundBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("Mesh_Ground")
+
+[node name="WestCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="EastCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="RoadCobblestone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("Mesh_Road")
+
+[node name="RiverHazard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("Mesh_Pool")
+
+[node name="StoneBridge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+mesh = SubResource("Mesh_Bridge")
+
+[node name="CrystalCluster1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 1.1, -5.0)
+mesh = SubResource("Mesh_CrystalCluster")
+
+[node name="CrystalCluster2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.1, 4.8)
+mesh = SubResource("Mesh_CrystalCluster")
+
+[node name="CrystalCluster3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.1, 6.2)
+mesh = SubResource("Mesh_CrystalCluster")
+
+[node name="CrystalCluster4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.1, -6.0)
+mesh = SubResource("Mesh_CrystalCluster")
+
+[node name="CrystalBeacon1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.9, -1.6)
+mesh = SubResource("Mesh_Lantern")
+
+[node name="BeaconLight1" type="OmniLight3D" parent="CrystalBeacon1"]
+light_color = Color(0.220, 0.741, 0.973, 1.0)
+light_energy = 3.0
+omni_range = 6.5
+
+[node name="CrystalBeacon2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0.9, 1.6)
+mesh = SubResource("Mesh_Lantern")
+
+[node name="BeaconLight2" type="OmniLight3D" parent="CrystalBeacon2"]
+light_color = Color(0.220, 0.741, 0.973, 1.0)
+light_energy = 3.0
+omni_range = 6.5
+
+[node name="CrystalDustParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+amount = 36
+lifetime = 3.8
+mesh = SubResource("Mesh_Dust")
+emission_shape = 3
+emission_box_extents = Vector3(6.5, 1.8, 10.0)
+direction = Vector3(0.2, 0.3, 0.2)
+spread = 50.0
+gravity = Vector3(0, -0.02, 0)
+initial_velocity_min = 0.3
+initial_velocity_max = 0.7

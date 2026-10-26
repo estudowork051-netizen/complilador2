@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/enemy_orc.glb" id="2_model"]
+
+[node name="EnemyOrc" type="PathFollow3D"]
+script = ExtResource("1_script")
+enemy_type = "orc"
+display_name = "Orc Brutamontes"
+max_health = 240
+move_speed = 1.6
+attack_damage = 25
+bounty_coins = 22
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

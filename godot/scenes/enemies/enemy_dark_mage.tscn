@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/enemy_dark_mage.glb" id="2_model"]
+
+[node name="EnemyDarkMage" type="PathFollow3D"]
+script = ExtResource("1_script")
+enemy_type = "dark_mage"
+display_name = "Mago Sombrio"
+max_health = 160
+move_speed = 1.7
+attack_damage = 22
+bounty_coins = 20
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/hero_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/hero_nyra.glb" id="2_model"]
+
+[node name="HeroNyra" type="Node3D"]
+script = ExtResource("1_script")
+hero_id = "hero_nyra"
+hero_name = "Nyra"
+max_health = 400
+attack_damage = 55
+attack_range = 3.8
+attack_interval = 0.85
+skill_cooldown_max = 9.0
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

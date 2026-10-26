@@ -1,0 +1,163 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/living_environment.gd" id="1_living"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Ground"]
+albedo_color = Color(0.043, 0.059, 0.149, 1.0)
+roughness = 0.65
+metallic = 0.2
+
+[sub_resource type="BoxMesh" id="Mesh_Ground"]
+material = SubResource("Mat_Ground")
+size = Vector3(14, 1.4, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Border"]
+albedo_color = Color(0.075, 0.102, 0.251, 1.0)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="Mesh_Border"]
+material = SubResource("Mat_Border")
+size = Vector3(0.6, 0.5, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road"]
+albedo_color = Color(0.118, 0.106, 0.294, 1.0)
+emission_enabled = true
+emission = Color(0.192, 0.180, 0.506, 1.0)
+emission_energy_multiplier = 0.3
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="Mesh_Road"]
+material = SubResource("Mat_Road")
+size = Vector3(1.8, 0.08, 20)
+
+[sub_resource type="StandardMaterial3D" id="Mat_NebulaAbyss"]
+transparency = 1
+albedo_color = Color(0.486, 0.227, 0.929, 0.85)
+emission_enabled = true
+emission = Color(0.753, 0.518, 0.988, 1.0)
+emission_energy_multiplier = 1.0
+roughness = 0.1
+
+[sub_resource type="BoxMesh" id="Mesh_Abyss"]
+material = SubResource("Mat_NebulaAbyss")
+size = Vector3(14, 0.06, 2.7)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Bridge"]
+albedo_color = Color(0.192, 0.180, 0.506, 1.0)
+emission_enabled = true
+emission = Color(0.35, 0.25, 0.7, 1.0)
+emission_energy_multiplier = 0.4
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="Mesh_Bridge"]
+material = SubResource("Mat_Bridge")
+size = Vector3(2.4, 0.25, 3.0)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Monolith"]
+albedo_color = Color(0.220, 0.741, 0.973, 1.0)
+emission_enabled = true
+emission = Color(0.220, 0.741, 0.973, 1.0)
+emission_energy_multiplier = 1.6
+metallic = 0.5
+roughness = 0.2
+
+[sub_resource type="BoxMesh" id="Mesh_Monolith"]
+material = SubResource("Mat_Monolith")
+size = Vector3(0.5, 2.6, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Beacon"]
+albedo_color = Color(0.957, 0.247, 0.369, 1.0)
+emission_enabled = true
+emission = Color(0.957, 0.247, 0.369, 1.0)
+emission_energy_multiplier = 4.0
+
+[sub_resource type="SphereMesh" id="Mesh_Beacon"]
+material = SubResource("Mat_Beacon")
+radius = 0.2
+height = 0.4
+
+[sub_resource type="StandardMaterial3D" id="Mat_Stardust"]
+transparency = 1
+albedo_color = Color(0.506, 0.549, 0.973, 0.9)
+emission_enabled = true
+emission = Color(0.506, 0.549, 0.973, 1.0)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="Mesh_Stardust"]
+material = SubResource("Mat_Stardust")
+radius = 0.06
+height = 0.12
+
+[node name="AstralPeak" type="Node3D"]
+script = ExtResource("1_living")
+
+[node name="GroundBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("Mesh_Ground")
+
+[node name="WestCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="EastCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="RoadCobblestone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("Mesh_Road")
+
+[node name="RiverHazard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("Mesh_Abyss")
+
+[node name="StoneBridge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+mesh = SubResource("Mesh_Bridge")
+
+[node name="CelestialMonolith1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.966, 0, 0.259, 0, 1, 0, -0.259, 0, 0.966, -4.8, 1.3, -5.2)
+mesh = SubResource("Mesh_Monolith")
+
+[node name="CelestialMonolith2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.966, 0, -0.259, 0, 1, 0, 0.259, 0, 0.966, 4.8, 1.3, 4.8)
+mesh = SubResource("Mesh_Monolith")
+
+[node name="CelestialMonolith3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -4.5, 1.3, 6.0)
+mesh = SubResource("Mesh_Monolith")
+
+[node name="CelestialMonolith4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, 4.6, 1.3, -5.8)
+mesh = SubResource("Mesh_Monolith")
+
+[node name="SolarBeacon1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0.9, -1.6)
+mesh = SubResource("Mesh_Beacon")
+
+[node name="BeaconLight1" type="OmniLight3D" parent="SolarBeacon1"]
+light_color = Color(0.957, 0.247, 0.369, 1.0)
+light_energy = 3.2
+omni_range = 6.5
+
+[node name="SolarBeacon2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 0.9, 1.6)
+mesh = SubResource("Mesh_Beacon")
+
+[node name="BeaconLight2" type="OmniLight3D" parent="SolarBeacon2"]
+light_color = Color(0.957, 0.247, 0.369, 1.0)
+light_energy = 3.2
+omni_range = 6.5
+
+[node name="AstralStardustParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0, 0)
+amount = 40
+lifetime = 4.2
+mesh = SubResource("Mesh_Stardust")
+emission_shape = 3
+emission_box_extents = Vector3(6.5, 1.8, 10.0)
+direction = Vector3(0.2, 0.4, 0.2)
+spread = 40.0
+gravity = Vector3(0, 0.03, 0)
+initial_velocity_min = 0.3
+initial_velocity_max = 0.9

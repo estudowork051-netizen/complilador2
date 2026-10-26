@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/enemy_skeleton.glb" id="2_model"]
+
+[node name="EnemySkeleton" type="PathFollow3D"]
+script = ExtResource("1_script")
+enemy_type = "skeleton"
+display_name = "Esqueleto Guerreiro"
+max_health = 130
+move_speed = 1.9
+attack_damage = 15
+bounty_coins = 14
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

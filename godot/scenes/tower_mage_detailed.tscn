@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/tower_mage.gd" id="1_tower"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_magic.tscn" id="2_proj"]
+[ext_resource type="PackedScene" path="res://models/tower_mage_detailed.glb" id="3_model"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+albedo_color = Color(0.584314, 0.286275, 0.941176, 0.25)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ring"]
+material = SubResource("StandardMaterial3D_ring")
+inner_radius = 5.4
+outer_radius = 5.5
+
+[node name="MageTowerDetailed" type="Node3D"]
+script = ExtResource("1_tower")
+attack_range = 5.5
+attack_cooldown = 1.6
+projectile_scene = ExtResource("2_proj")
+
+[node name="ModelInstance" parent="." instance=ExtResource("3_model")]
+
+[node name="CrystalMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="FirePoint" type="Marker3D" parent="CrystalMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RangeRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("TorusMesh_ring")

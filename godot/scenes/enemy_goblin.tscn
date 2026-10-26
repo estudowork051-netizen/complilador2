@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_goblin.gd" id="1_goblin"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skin"]
+albedo_color = Color(0.0862745, 0.639216, 0.290196, 1)
+roughness = 0.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_torso"]
+material = SubResource("StandardMaterial3D_skin")
+radius = 0.22
+height = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vest"]
+albedo_color = Color(0.470588, 0.207843, 0.0588235, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vest"]
+material = SubResource("StandardMaterial3D_vest")
+size = Vector3(0.48, 0.35, 0.32)
+
+[sub_resource type="SphereMesh" id="SphereMesh_head"]
+material = SubResource("StandardMaterial3D_skin")
+radius = 0.2
+height = 0.35
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ear"]
+material = SubResource("StandardMaterial3D_skin")
+top_radius = 0.02
+bottom_radius = 0.08
+height = 0.25
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_leg"]
+material = SubResource("StandardMaterial3D_skin")
+radius = 0.08
+height = 0.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_club"]
+albedo_color = Color(0.25098, 0.129412, 0.0392157, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_club"]
+material = SubResource("StandardMaterial3D_club")
+top_radius = 0.08
+bottom_radius = 0.03
+height = 0.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_health"]
+viewport_path = NodePath("CharacterRoot/HealthBar3D/SubViewport")
+
+[node name="EnemyGoblin" type="PathFollow3D"]
+script = ExtResource("1_goblin")
+
+[node name="CharacterRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+
+[node name="Torso" type="Node3D" parent="CharacterRoot"]
+
+[node name="BodyMesh" type="MeshInstance3D" parent="CharacterRoot/Torso"]
+mesh = SubResource("CapsuleMesh_torso")
+
+[node name="LeatherVest" type="MeshInstance3D" parent="CharacterRoot/Torso"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("BoxMesh_vest")
+
+[node name="Head" type="Node3D" parent="CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+
+[node name="HeadMesh" type="MeshInstance3D" parent="CharacterRoot/Head"]
+mesh = SubResource("SphereMesh_head")
+
+[node name="LeftEar" type="MeshInstance3D" parent="CharacterRoot/Head"]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -0.22, 0.05, 0)
+mesh = SubResource("CylinderMesh_ear")
+
+[node name="RightEar" type="MeshInstance3D" parent="CharacterRoot/Head"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0.22, 0.05, 0)
+mesh = SubResource("CylinderMesh_ear")
+
+[node name="LeftLeg" type="Node3D" parent="CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, -0.35, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterRoot/LeftLeg"]
+mesh = SubResource("CapsuleMesh_leg")
+
+[node name="RightLeg" type="Node3D" parent="CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, -0.35, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterRoot/RightLeg"]
+mesh = SubResource("CapsuleMesh_leg")
+
+[node name="RightArm" type="Node3D" parent="CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.15, 0)
+
+[node name="ClubMesh" type="MeshInstance3D" parent="CharacterRoot/RightArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.15)
+mesh = SubResource("CylinderMesh_club")
+
+[node name="HealthBar3D" type="Sprite3D" parent="CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_health")
+
+[node name="SubViewport" type="SubViewport" parent="CharacterRoot/HealthBar3D"]
+transparent_bg = true
+size = Vector2i(120, 20)
+
+[node name="ProgressBar" type="ProgressBar" parent="CharacterRoot/HealthBar3D/SubViewport"]
+offset_right = 120.0
+offset_bottom = 20.0
+value = 100.0
+show_percentage = false

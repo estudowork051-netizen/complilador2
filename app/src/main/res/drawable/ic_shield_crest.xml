@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Outer Shield Frame -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M48,8 L16,22 L16,50 C16,70 30,86 48,92 C66,86 80,70 80,50 L80,22 Z" />
+    <!-- Inner Shield Body -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M48,14 L22,26 L22,49 C22,66 33,79 48,85 C63,79 74,66 74,49 L74,26 Z" />
+    <!-- Gold Central Cross / Sword -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M45,24 L51,24 L51,68 L45,68 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M33,36 L63,36 L63,42 L33,42 Z" />
+    <!-- Crown Top Accent -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M40,50 L48,44 L56,50 L54,60 L42,60 Z" />
+    <!-- Central Gem -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M48,36 L52,40 L48,44 L44,40 Z" />
+</vector>

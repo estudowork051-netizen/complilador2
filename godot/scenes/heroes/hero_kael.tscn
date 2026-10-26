@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/hero_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/hero_kael.glb" id="2_model"]
+
+[node name="HeroKael" type="Node3D"]
+script = ExtResource("1_script")
+hero_id = "hero_kael"
+hero_name = "Kael"
+max_health = 550
+attack_damage = 50
+attack_range = 4.2
+attack_interval = 1.3
+skill_cooldown_max = 12.0
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

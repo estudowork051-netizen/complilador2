@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#0B0F19"
+        android:pathData="M0,0h108v108h-108z"/>
+    <!-- Outer Shield Frame -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M54,16 L22,30 L22,58 C22,78 36,94 54,100 C72,94 86,78 86,58 L86,30 Z" />
+    <!-- Inner Shield Body -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M54,22 L28,34 L28,57 C28,74 39,87 54,93 C69,87 80,74 80,57 L80,34 Z" />
+    <!-- Sword Blade -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M51,32 L57,32 L57,76 L51,76 Z" />
+    <!-- Sword Crossguard -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M39,44 L69,44 L69,50 L39,50 Z" />
+    <!-- Ruby Gem -->
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M54,44 L58,47 L54,50 L50,47 Z" />
+</vector>

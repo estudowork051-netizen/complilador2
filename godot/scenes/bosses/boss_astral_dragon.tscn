@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/boss_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/boss_astral_dragon.glb" id="2_model"]
+
+[node name="BossAstralDragon" type="PathFollow3D"]
+script = ExtResource("1_script")
+boss_type = "astral_dragon"
+display_name = "Dragão Astral"
+max_health = 2600
+move_speed = 1.05
+attack_damage = 85
+bounty_coins = 280
+special_skill_name = "StarlightNovaBreath"
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.4, 0)

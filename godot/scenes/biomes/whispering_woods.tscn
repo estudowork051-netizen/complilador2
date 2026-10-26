@@ -1,0 +1,154 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="Script" path="res://scripts/living_environment.gd" id="1_living"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_Ground"]
+albedo_color = Color(0.059, 0.161, 0.118, 1.0)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_Ground"]
+material = SubResource("Mat_Ground")
+size = Vector3(14, 1.4, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Border"]
+albedo_color = Color(0.086, 0.220, 0.169, 1.0)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="Mesh_Border"]
+material = SubResource("Mat_Border")
+size = Vector3(0.6, 0.5, 22)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Road"]
+albedo_color = Color(0.420, 0.357, 0.263, 1.0)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Mesh_Road"]
+material = SubResource("Mat_Road")
+size = Vector3(1.8, 0.08, 20)
+
+[sub_resource type="StandardMaterial3D" id="Mat_MistyStream"]
+transparency = 1
+albedo_color = Color(0.051, 0.580, 0.533, 0.85)
+emission_enabled = true
+emission = Color(0.051, 0.580, 0.533, 1.0)
+emission_energy_multiplier = 0.5
+roughness = 0.15
+
+[sub_resource type="BoxMesh" id="Mesh_Stream"]
+material = SubResource("Mat_MistyStream")
+size = Vector3(14, 0.06, 2.6)
+
+[sub_resource type="StandardMaterial3D" id="Mat_Bridge"]
+albedo_color = Color(0.361, 0.239, 0.180, 1.0)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Mesh_Bridge"]
+material = SubResource("Mat_Bridge")
+size = Vector3(2.4, 0.25, 2.9)
+
+[sub_resource type="StandardMaterial3D" id="Mat_DenseTree"]
+albedo_color = Color(0.016, 0.471, 0.341, 1.0)
+roughness = 0.75
+
+[sub_resource type="CylinderMesh" id="Mesh_DenseTree"]
+material = SubResource("Mat_DenseTree")
+top_radius = 0.2
+bottom_radius = 1.05
+height = 2.4
+
+[sub_resource type="StandardMaterial3D" id="Mat_Lantern"]
+albedo_color = Color(0.404, 0.910, 0.976, 1.0)
+emission_enabled = true
+emission = Color(0.404, 0.910, 0.976, 1.0)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="Mesh_Lantern"]
+material = SubResource("Mat_Lantern")
+radius = 0.16
+height = 0.32
+
+[sub_resource type="StandardMaterial3D" id="Mat_Firefly"]
+transparency = 1
+albedo_color = Color(0.404, 0.910, 0.976, 0.9)
+emission_enabled = true
+emission = Color(0.404, 0.910, 0.976, 1.0)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="Mesh_Firefly"]
+material = SubResource("Mat_Firefly")
+radius = 0.07
+height = 0.14
+
+[node name="WhisperingWoods" type="Node3D"]
+script = ExtResource("1_living")
+
+[node name="GroundBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("Mesh_Ground")
+
+[node name="WestCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="EastCliffBorder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7, 0.2, 0)
+mesh = SubResource("Mesh_Border")
+
+[node name="RoadCobblestone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("Mesh_Road")
+
+[node name="RiverHazard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("Mesh_Stream")
+
+[node name="StoneBridge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+mesh = SubResource("Mesh_Bridge")
+
+[node name="LivingTree1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 1.2, -4.8)
+mesh = SubResource("Mesh_DenseTree")
+
+[node name="LivingTree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9, 1.2, 4.2)
+mesh = SubResource("Mesh_DenseTree")
+
+[node name="LivingTree3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.2, 5.8)
+mesh = SubResource("Mesh_DenseTree")
+
+[node name="LivingTree4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7, 1.2, -6.0)
+mesh = SubResource("Mesh_DenseTree")
+
+[node name="CyanLantern1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.0, -1.5)
+mesh = SubResource("Mesh_Lantern")
+
+[node name="LanternLight1" type="OmniLight3D" parent="CyanLantern1"]
+light_color = Color(0.404, 0.910, 0.976, 1.0)
+light_energy = 2.6
+omni_range = 6.0
+
+[node name="CyanLantern2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 1.0, 1.5)
+mesh = SubResource("Mesh_Lantern")
+
+[node name="LanternLight2" type="OmniLight3D" parent="CyanLantern2"]
+light_color = Color(0.404, 0.910, 0.976, 1.0)
+light_energy = 2.6
+omni_range = 6.0
+
+[node name="FireflyParticles" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+amount = 30
+lifetime = 3.5
+mesh = SubResource("Mesh_Firefly")
+emission_shape = 3
+emission_box_extents = Vector3(6.5, 2.0, 10.0)
+direction = Vector3(0.2, 0.5, 0.2)
+spread = 45.0
+gravity = Vector3(0, 0.05, 0)
+initial_velocity_min = 0.4
+initial_velocity_max = 1.0

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/boss_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/boss_obsidian_golem.glb" id="2_model"]
+
+[node name="BossObsidianGolem" type="PathFollow3D"]
+script = ExtResource("1_script")
+boss_type = "obsidian_golem"
+display_name = "Golem de Obsidiana"
+max_health = 2200
+move_speed = 0.85
+attack_damage = 75
+bounty_coins = 200
+special_skill_name = "MagmaFissureSlam"
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)

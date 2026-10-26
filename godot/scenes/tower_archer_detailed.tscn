@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/tower_archer.gd" id="1_tower"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_arrow.tscn" id="2_proj"]
+[ext_resource type="PackedScene" path="res://models/tower_archer_detailed.glb" id="3_model"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+albedo_color = Color(0.0627451, 0.72549, 0.505882, 0.25)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ring"]
+material = SubResource("StandardMaterial3D_ring")
+inner_radius = 6.4
+outer_radius = 6.5
+
+[node name="ArcherTowerDetailed" type="Node3D"]
+script = ExtResource("1_tower")
+attack_range = 6.5
+attack_cooldown = 1.1
+projectile_scene = ExtResource("2_proj")
+
+[node name="ModelInstance" parent="." instance=ExtResource("3_model")]
+
+[node name="TurretHead" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+
+[node name="BowMount" type="Node3D" parent="TurretHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="FirePoint" type="Marker3D" parent="TurretHead/BowMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
+
+[node name="RangeRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("TorusMesh_ring")

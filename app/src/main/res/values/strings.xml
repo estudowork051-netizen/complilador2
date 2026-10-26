@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application Info -->
+    <string name="app_name">Heroes Tower Defense</string>
+    <string name="app_subtitle">⚔ Defensores do Reino ⚔</string>
+    <string name="app_version_label">Versão 1.1.0 (Upgrade Visual 1/6 — Heróis com Animações Articuladas)</string>
+
+    <!-- Main Menu Buttons -->
+    <string name="btn_play">JOGAR</string>
+    <string name="btn_heroes">HERÓIS</string>
+    <string name="btn_shop">LOJA</string>
+    <string name="btn_stages">FASES</string>
+    <string name="btn_settings">CONFIGURAÇÕES</string>
+    <string name="btn_exit">SAIR</string>
+
+    <!-- Common Navigation Buttons -->
+    <string name="btn_back">VOLTAR</string>
+    <string name="btn_back_to_menu">VOLTAR AO MENU</string>
+
+    <!-- Stage Preparation Screen (Match Setup) -->
+    <string name="stage_prep_title">PREPARAÇÃO DA PARTIDA</string>
+    <string name="stage_prep_stage_name">Fase 1: O Desfiladeiro dos Goblins</string>
+    <string name="stage_prep_map_title">Prévia do Mapa Tático</string>
+    <string name="stage_prep_map_desc">Rota sinuosa pela floresta fantástica com 5 ondas inimigas.</string>
+    <string name="stage_prep_mission_title">Briefing da Missão</string>
+    <string name="stage_prep_briefing_text">Batedores detectaram incursões goblins pelo desfiladeiro norte. Monte suas defesas estratégicas para proteger a entrada da cidadela.</string>
+    <string name="stage_prep_waves_info">Ondas Inimigas: 5 previstas (5, 7, 9, 11, 13)</string>
+    <string name="stage_prep_gold_info">Ouro Inicial: 250 moedas</string>
+    <string name="stage_prep_lives_info">Vidas da Base: 20 pontos</string>
+    <string name="stage_prep_terrain_info">Terreno: Bosque Encantado e Desfiladeiro</string>
+    <string name="btn_start_stage">INICIAR FASE</string>
+
+    <!-- Gameplay Arena Screen -->
+    <string name="stage_one_title">CAMPO DE BATALHA — FASE 1</string>
+    <string name="stage_one_subtitle">O Desfiladeiro dos Goblins</string>
+    <string name="stage_one_status_title">Status da Batalha</string>
+    <string name="stage_one_status_badge">PARTIDA ATIVA</string>
+    <string name="stage_one_briefing">Inimigos avançam pelo caminho da floresta. Impeça que alcancem o castelo real!</string>
+    <string name="stage_one_intel_waves">Ondas: 5</string>
+    <string name="stage_one_intel_terrain">Terreno: Bosque Encantado</string>
+    <string name="stage_one_intel_threat">Ameaça: Goblin Raiders (Nível 1)</string>
+
+    <!-- Gameplay HUD -->
+    <string name="gameplay_hud_wave">Onda: %1$d / %2$d</string>
+    <string name="gameplay_hud_lives">Vidas: %1$d / %2$d</string>
+    <string name="gameplay_hud_enemies">Inimigos: %1$d</string>
+    <string name="gameplay_hud_towers">Torres: %1$d / %2$d</string>
+    <string name="btn_pause">PAUSAR</string>
+    <string name="btn_resume">CONTINUAR</string>
+    <string name="btn_restart">REINICIAR FASE</string>
+    <string name="btn_try_again">TENTAR NOVAMENTE</string>
+    <string name="btn_play_again">JOGAR NOVAMENTE</string>
+
+    <!-- Tower Construction & Combat -->
+    <string name="build_panel_title">CONSTRUIR DEFESA</string>
+    <string name="build_panel_subtitle">Selecione uma torre para posicionar</string>
+    <string name="build_btn_archer">ARQUEIRO\nDano: 18 | Veloz</string>
+    <string name="build_btn_mage">MAGO\nDano: 45 | Longo</string>
+    <string name="build_btn_cannon">CANHÃO\nDano: 70 | Área</string>
+    <string name="btn_cancel_build">CANCELAR</string>
+    <string name="btn_close_tower_info">FECHAR</string>
+    <string name="tower_info_title">TORRE CONSTRUÍDA</string>
+    <string name="tower_limit_reached">Limite de torres atingido (5/5)</string>
+
+    <!-- Hero HUD & Combat (Part 5) -->
+    <string name="hero_hud_deployed">Herói em Batalha</string>
+    <string name="hero_skill_ready">PRONTO</string>
+    <string name="hero_skill_cooldown">%1$.1fs</string>
+
+    <!-- Pause Screen -->
+    <string name="pause_title">JOGO PAUSADO</string>
+    <string name="pause_message">A partida está suspensa. A movimentação dos inimigos e o cronômetro foram pausados.</string>
+
+    <!-- Victory Screen -->
+    <string name="victory_title">VITÓRIA!</string>
+    <string name="victory_subtitle">O Reino Foi Defendido com Sucesso!</string>
+    <string name="victory_message">Parabéns, Comandante! Você sobreviveu a todas as 5 ondas de invasores e a fortaleza permaneceu inabalável.</string>
+    <string name="victory_summary_waves">Ondas concluídas: 5 de 5</string>
+    <string name="victory_summary_health">Vida final da base: %1$d / %2$d</string>
+
+    <!-- Defeat Screen -->
+    <string name="defeat_title">DERROTA!</string>
+    <string name="defeat_subtitle">A Fortaleza Sucumbiu</string>
+    <string name="defeat_message">A vida da base chegou a zero. Os invasores romperam as defesas do desfiladeiro e conquistaram o posto avançado.</string>
+    <string name="defeat_summary_waves">Ondas alcançadas: %1$d de 5</string>
+
+    <!-- Stage Select Screen -->
+    <string name="stages_title">FASES DA CAMPANHA</string>
+    <string name="stages_subtitle">Selecione uma fase para preparar a batalha</string>
+    <string name="stage_status_available">DISPONÍVEL</string>
+    <string name="stage_status_locked">BLOQUEADA</string>
+    <string name="stage_locked_message">Fase Bloqueada! Complete as fases anteriores para desbloquear.</string>
+    <string name="stage_1_name">Fase 1 — O Desfiladeiro dos Goblins</string>
+    <string name="stage_1_desc">Entrada das montanhas. 5 ondas de invasão goblin.</string>
+    <string name="stage_2_name">Fase 2 — Floresta dos Sussurros</string>
+    <string name="stage_2_desc">Vegetação densa e emboscadas na névoa.</string>
+    <string name="stage_3_name">Fase 3 — Ruínas Ancestrais</string>
+    <string name="stage_3_desc">Templos esquecidos com xamãs e gárgulas.</string>
+    <string name="stage_4_name">Fase 4 — Cavernas de Cristal</string>
+    <string name="stage_4_desc">Túneis subterrâneos e rotas sinuosas.</string>
+    <string name="stage_5_name">Fase 5 — Fortaleza Vulcânica</string>
+    <string name="stage_5_desc">Chamas e hordas orcs de alta resistência.</string>
+    <string name="stage_6_name">Fase 6 — Pico do Dragão</string>
+    <string name="stage_6_desc">Covil do chefe supremo dragão.</string>
+
+    <!-- Heroes Collection Screen -->
+    <string name="heroes_title">COLEÇÃO DE HERÓIS</string>
+    <string name="heroes_subtitle">6 Heróis Lendários com Habilidades e Raridades</string>
+    <string name="hero_rarity_placeholder">Raridade: Em Breve (Parte 5)</string>
+    <string name="hero_skill_placeholder">Habilidades: Em Desenvolvimento</string>
+
+    <!-- Rarities -->
+    <string name="rarity_common">Comum</string>
+    <string name="rarity_rare">Raro</string>
+    <string name="rarity_epic">Épico</string>
+    <string name="rarity_legendary">Lendário</string>
+    <string name="rarity_mythic">Mítico</string>
+
+    <!-- 1. Kael -->
+    <string name="hero_kael_name">Kael</string>
+    <string name="hero_kael_title">Cavaleiro do Fogo</string>
+    <string name="hero_kael_class">Classe: Guerreiro de Vanguarda</string>
+    <string name="hero_kael_stats">Vida: 550 | Dano: 45 | Vel. Ataque: 1.2/s | DPS: 54.0</string>
+    <string name="hero_kael_skill1_name">1. Golpe Flamejante (Recarga: 6s | Dano: 120)</string>
+    <string name="hero_kael_skill1_desc">Golpe concentrado com lâmina em chamas que causa alto dano ígneo a um invasor.</string>
+    <string name="hero_kael_skill2_name">2. Onda de Fogo (Recarga: 12s | Dano: 80 em Área)</string>
+    <string name="hero_kael_skill2_desc">Libera um anel ardente expansivo causando dano ígneo em área a todos os inimigos ao redor.</string>
+
+    <!-- 2. Lyra -->
+    <string name="hero_lyra_name">Lyra</string>
+    <string name="hero_lyra_title">Sentinela dos Bosques</string>
+    <string name="hero_lyra_class">Classe: Arqueira de Precisão</string>
+    <string name="hero_lyra_stats">Vida: 420 | Dano: 40 | Vel. Ataque: 1.5/s | DPS: 75.0</string>
+    <string name="hero_lyra_skill1_name">1. Tiro de Precisão (Recarga: 7s | Dano: 140)</string>
+    <string name="hero_lyra_skill1_desc">Dispara uma flecha veloz perfurante de longo alcance com alto dano de impacto.</string>
+    <string name="hero_lyra_skill2_name">2. Chuva de Flechas (Recarga: 14s | Dano: 95 em Área)</string>
+    <string name="hero_lyra_skill2_desc">Faz chover uma saraivada de flechas místicas em uma zona da trilha, punindo múltiplos goblins.</string>
+
+    <!-- 3. Brakk -->
+    <string name="hero_brakk_name">Brakk</string>
+    <string name="hero_brakk_title">Guardião das Montanhas</string>
+    <string name="hero_brakk_class">Classe: Bárbaro Defensor</string>
+    <string name="hero_brakk_stats">Vida: 750 | Dano: 50 | Vel. Ataque: 0.9/s | DPS: 67.5</string>
+    <string name="hero_brakk_skill1_name">1. Pancada Terrestre (Recarga: 8s | Dano: 110 em Área)</string>
+    <string name="hero_brakk_skill1_desc">Bate com a maça no solo gerando uma onda de choque sísmica devastadora em área.</string>
+    <string name="hero_brakk_skill2_name">2. Fortificação Protetora (Recarga: 18s | +2 Vidas)</string>
+    <string name="hero_brakk_skill2_desc">Ergue escudos pétreos ancestrais, restaurando 2 pontos de integridade da fortaleza.</string>
+
+    <!-- 4. Nyra -->
+    <string name="hero_nyra_name">Nyra</string>
+    <string name="hero_nyra_title">Arquimaga da Tempestade</string>
+    <string name="hero_nyra_class">Classe: Feiticeira Elemental</string>
+    <string name="hero_nyra_stats">Vida: 400 | Dano: 60 | Vel. Ataque: 1.4/s | DPS: 126.0</string>
+    <string name="hero_nyra_skill1_name">1. Ataque Sombrio (Recarga: 6.5s | Dano: 170)</string>
+    <string name="hero_nyra_skill1_desc">Desfere um golpe sombrio súbito que atinge o invasor prioritário com dano fulminante.</string>
+    <string name="hero_nyra_skill2_name">2. Dança das Lâminas (Recarga: 11s | Dano: 115 em Área)</string>
+    <string name="hero_nyra_skill2_desc">Invoca lâminas de energia sombria rotativa que fustigam todos os inimigos na área.</string>
+
+    <!-- 5. Tiko -->
+    <string name="hero_tiko_name">Tiko</string>
+    <string name="hero_tiko_title">Artífice Alquimista</string>
+    <string name="hero_tiko_class">Classe: Mestre de Armadilhas</string>
+    <string name="hero_tiko_stats">Vida: 460 | Dano: 42 | Vel. Ataque: 1.1/s | DPS: 85.5</string>
+    <string name="hero_tiko_skill1_name">1. Mina de Fragmentação (Recarga: 8s | Dano: 130 em Área)</string>
+    <string name="hero_tiko_skill1_desc">Detona um artefato de estilhaços mecânicos atingindo múltiplos invasores no caminho.</string>
+    <string name="hero_tiko_skill2_name">2. Engenho Explosivo (Recarga: 15s | Dano: 160 em Área)</string>
+    <string name="hero_tiko_skill2_desc">Arremessa um mecanismo incendiário de alta potência causando explosão devastadora em grande área.</string>
+
+    <!-- 6. Vesper -->
+    <string name="hero_vesper_name">Vesper</string>
+    <string name="hero_vesper_title">Caçadora Espectral</string>
+    <string name="hero_vesper_class">Classe: Assassina das Sombras</string>
+    <string name="hero_vesper_stats">Vida: 440 | Dano: 65 | Vel. Ataque: 1.0/s | DPS: 146.2</string>
+    <string name="hero_vesper_skill1_name">1. Cometa Astral (Recarga: 7.5s | Dano: 190)</string>
+    <string name="hero_vesper_skill1_desc">Canaliza um projétil cósmico veloz de matéria estelar causando destruição maciça a um alvo.</string>
+    <string name="hero_vesper_skill2_name">2. Singularidade Cósmica (Recarga: 16s | Dano: 150 em Área)</string>
+    <string name="hero_vesper_skill2_desc">Abre um vórtice estelar supermassivo que aprisiona e consome toda a horda de goblins na área.</string>
+
+    <!-- Shop Screen -->
+    <string name="shop_title">LOJA DO REINO</string>
+    <string name="shop_subtitle">Mercado de Itens e Suprimentos</string>
+    <string name="shop_balance_unavailable">Saldo de Moedas: Indisponível nesta etapa (Sistema econômico na Parte 7)</string>
+    <string name="shop_badge_coming_soon">EM BREVE — PARTE 7</string>
+    <string name="btn_shop_unavailable">INDISPONÍVEL</string>
+    <string name="shop_item_chest_title">Baú de Relíquias Místicas</string>
+    <string name="shop_item_chest_desc">Contém artefatos arcanos para fortificar torres.</string>
+    <string name="shop_item_bundle_title">Pacote de Suprimentos Reais</string>
+    <string name="shop_item_bundle_desc">Recursos e materiais para evolução de defesas.</string>
+    <string name="shop_item_potion_title">Poções de Batalha</string>
+    <string name="shop_item_potion_desc">Frascos alquímicos de vigor e fúria para heróis.</string>
+    <string name="shop_item_tome_title">Tomo de Sabedoria Antiga</string>
+    <string name="shop_item_tome_desc">Conhecimento arcano para desbloqueio de magias.</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">CONFIGURAÇÕES</string>
+    <string name="settings_audio_section">Áudio e Som</string>
+    <string name="settings_master_volume">Volume Geral</string>
+    <string name="settings_sfx_volume">Efeitos Sonoros (SFX)</string>
+    <string name="settings_music_toggle">Música de Fundo</string>
+    <string name="settings_gameplay_section">Jogabilidade</string>
+    <string name="settings_vibration_toggle">Vibração em Batalha</string>
+    <string name="settings_info_section">Informações do Aplicativo</string>
+    <string name="settings_saved_notice">Configurações salvas automaticamente</string>
+</resources>

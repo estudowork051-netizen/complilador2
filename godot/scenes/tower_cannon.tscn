@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/tower_cannon.gd" id="1_cannon"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_cannonball.tscn" id="2_proj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_granite"]
+albedo_color = Color(0.2, 0.25, 0.33, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_bastion"]
+material = SubResource("StandardMaterial3D_granite")
+size = Vector3(1.8, 0.9, 1.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dome"]
+albedo_color = Color(0.12, 0.16, 0.22, 1)
+metallic = 0.8
+roughness = 0.4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dome"]
+material = SubResource("StandardMaterial3D_dome")
+top_radius = 0.65
+bottom_radius = 0.75
+height = 0.35
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_barrel"]
+material = SubResource("StandardMaterial3D_dome")
+top_radius = 0.18
+bottom_radius = 0.24
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+albedo_color = Color(0.96, 0.27, 0.27, 0.25)
+
+[sub_resource type="TorusMesh" id="TorusMesh_range"]
+material = SubResource("StandardMaterial3D_ring")
+inner_radius = 5.4
+outer_radius = 5.5
+
+[node name="CannonTower" type="Node3D"]
+script = ExtResource("1_cannon")
+projectile_scene = ExtResource("2_proj")
+
+[node name="BastionBlock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_bastion")
+
+[node name="TurretMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
+
+[node name="Dome" type="MeshInstance3D" parent="TurretMount"]
+mesh = SubResource("CylinderMesh_dome")
+
+[node name="Barrel" type="Node3D" parent="TurretMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="BarrelMesh" type="MeshInstance3D" parent="TurretMount/Barrel"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.5)
+mesh = SubResource("CylinderMesh_barrel")
+
+[node name="FirePoint" type="Marker3D" parent="TurretMount/Barrel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="RangeRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("TorusMesh_range")

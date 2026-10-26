@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/boss_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/boss_shadow_queen.glb" id="2_model"]
+
+[node name="BossShadowQueen" type="PathFollow3D"]
+script = ExtResource("1_script")
+boss_type = "shadow_queen"
+display_name = "Rainha das Sombras"
+max_health = 1800
+move_speed = 1.15
+attack_damage = 60
+bounty_coins = 220
+special_skill_name = "ShadowBladeFlurry"
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 0.2, 0)

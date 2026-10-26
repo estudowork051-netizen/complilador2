@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/projectile_cannonball.gd" id="1_cannon"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hitbox"]
+radius = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iron"]
+albedo_color = Color(0.12, 0.16, 0.22, 1)
+metallic = 0.9
+roughness = 0.35
+
+[sub_resource type="SphereMesh" id="SphereMesh_ball"]
+material = SubResource("StandardMaterial3D_iron")
+radius = 0.22
+height = 0.44
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smoke"]
+albedo_color = Color(0.4, 0.45, 0.52, 0.8)
+
+[sub_resource type="SphereMesh" id="SphereMesh_smoke"]
+material = SubResource("StandardMaterial3D_smoke")
+radius = 0.08
+height = 0.16
+
+[node name="ProjectileCannonball" type="Area3D"]
+script = ExtResource("1_cannon")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_hitbox")
+
+[node name="ShellMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ball")
+
+[node name="TrailParticles" type="CPUParticles3D" parent="."]
+amount = 16
+lifetime = 0.35
+mesh = SubResource("SphereMesh_smoke")
+direction = Vector3(0, 0, -1)
+spread = 25.0
+gravity = Vector3(0, 0.5, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.8

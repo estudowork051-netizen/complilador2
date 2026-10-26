@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/hero_base_3d.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://models/hero_lyra.glb" id="2_model"]
+
+[node name="HeroLyra" type="Node3D"]
+script = ExtResource("1_script")
+hero_id = "hero_lyra"
+hero_name = "Lyra"
+max_health = 420
+attack_damage = 42
+attack_range = 6.8
+attack_interval = 1.1
+skill_cooldown_max = 10.0
+
+[node name="ModelInstance" parent="." instance=ExtResource("2_model")]

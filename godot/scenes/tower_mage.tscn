@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/tower_mage.gd" id="1_mage"]
+[ext_resource type="PackedScene" path="res://scenes/projectile_magic.tscn" id="2_proj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slate"]
+albedo_color = Color(0.12, 0.11, 0.29, 1)
+roughness = 0.8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_podium"]
+material = SubResource("StandardMaterial3D_slate")
+top_radius = 0.8
+bottom_radius = 1.0
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_indigo"]
+albedo_color = Color(0.26, 0.22, 0.79, 1)
+roughness = 0.6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_spire"]
+material = SubResource("StandardMaterial3D_indigo")
+top_radius = 0.35
+bottom_radius = 0.55
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crystal"]
+albedo_color = Color(0.22, 0.74, 0.97, 1)
+emission_enabled = true
+emission = Color(0.66, 0.33, 0.97, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="PrismMesh" id="PrismMesh_crystal"]
+material = SubResource("StandardMaterial3D_crystal")
+size = Vector3(0.5, 0.8, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ring"]
+transparency = 1
+albedo_color = Color(0.22, 0.74, 0.97, 0.25)
+
+[sub_resource type="TorusMesh" id="TorusMesh_range"]
+material = SubResource("StandardMaterial3D_ring")
+inner_radius = 6.9
+outer_radius = 7.0
+
+[node name="MageTower" type="Node3D"]
+script = ExtResource("1_mage")
+projectile_scene = ExtResource("2_proj")
+
+[node name="BasePodium" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("CylinderMesh_podium")
+
+[node name="SpireColumn" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+mesh = SubResource("CylinderMesh_spire")
+
+[node name="LevitatingCrystal" type="MeshInstance3D" parent="SpireColumn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+mesh = SubResource("PrismMesh_crystal")
+
+[node name="FirePoint" type="Marker3D" parent="SpireColumn/LevitatingCrystal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="ChargeLight" type="OmniLight3D" parent="SpireColumn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+light_color = Color(0.22, 0.74, 0.97, 1)
+light_energy = 1.5
+omni_range = 3.5
+
+[node name="RangeRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("TorusMesh_range")
